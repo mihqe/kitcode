@@ -35,21 +35,20 @@ O KitCode é um projeto de software livre e educacional fornecido "COMO ESTÁ" (
 
 ### **Transparência sobre Desenvolvimento:**
 - ⚠️ **Parte do código-fonte** foi desenvolvida com assistência de Inteligência Artificial
-- ⚠️ **Todo conteúdo foi revisado** e validado por desenvolvedores humanos
 - ⚠️ **A responsabilidade final** pelo conteúdo é dos mantenedores humanos
-- ⚠️ **Mantemos padrões de qualidade** e segurança rigorosos
+- ⚠️ **O código é fornecido como está**, sem garantias de revisão humana
 
 ### **Por que usamos IA:**
 - 🎯 **Acelerar desenvolvimento** de protótipos e funcionalidades
 - 🎯 **Gerar documentação** e exemplos educacionais
 - 🎯 **Otimizar código** para melhor performance
-- 🎯 **Criar testes** e validações automáticas
+- 🎯 **Criar estruturas básicas** de projeto
 
-### **Garantias de Qualidade:**
-- 🔍 **Revisão humana 100%** de todo código gerado por IA
-- 🔍 **Testes rigorosos** antes de inclusão no projeto
-- 🔍 **Validação de segurança** e performance
-- 🔍 **Documentação verificada** e atualizada
+### **Limitações e Realidade:**
+- ⚠️ **NÃO garantimos revisão humana 100%** do conteúdo gerado por IA
+- ⚠️ **Cabe ao usuário** revisar e validar o código antes de usar
+- ⚠️ **Use por conta e risco** - sem garantias de qualidade ou segurança
+- ⚠️ **Teste exaustivamente** antes de aplicação crítica
 
 ---
 

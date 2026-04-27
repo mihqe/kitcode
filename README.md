@@ -222,7 +222,7 @@ Dúvidas, sugestões ou ideias? [Participe das discussões](https://github.com/m
 
 ### ⚠️ Termos Legais
 - **Isenção de responsabilidade**: Não nos responsabilizamos por danos
-- **Uso de IA**: Parte do desenvolvimento assistida por IA, revisada por humanos
+- **Uso de IA**: Parte do desenvolvimento assistida por IA (sem garantias de revisão)
 - **Direitos autorais**: Licenciado sob MIT com atribuição obrigatória
 - [Termos Legais Completos](docs/LEGAL.md)
 
