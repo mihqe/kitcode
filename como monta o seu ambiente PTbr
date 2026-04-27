@@ -1,0 +1,46 @@
+Como Montar o Seu Ambiente
+No Linux (ou GitHub Codespaces)
+Preparamos um instalador que faz tudo sozinho. Basta abrir o terminal na pasta e digitar:
+
+Bash
+bash instalar.sh
+Isso vai compilar o motor e criar um atalho global. Depois, você só precisa digitar kit seu_arquivo.kit para rodar!
+
+ No Windows
+Certifique-se de ter o compilador GCC (MinGW) instalado.
+
+Dê um clique duplo no arquivo setup_windows.bat.
+
+O arquivo kitcode.exe será gerado na hora. Agora é só arrastar seu script para cima dele!
+
+ Guia Rápido de Comandos (Dicionário KitCode)
+ Comunicação e Visual
+diga: Mostra um texto ou o valor de uma variável.
+
+digite: O efeito épico de máquina de escrever (letra por letra).
+
+cor <0-3>: Muda a cor (1: Vermelho, 2: Verde, 3: Azul, 0: Reset).
+
+som: Emite um aviso sonoro (Beep).
+
+limpar: Limpa a tela para começar uma nova cena.
+
+data: Carimba o horário atual no seu log.
+
+ Inteligência e Lógica
+pergunta <nome_da_var> <mensagem>: Interage com o usuário e guarda o que ele digitar.
+
+se / senao / fim se: Toma decisões baseadas em valores (ex: se vida == 0).
+
+chance <0-100>: Sorteia se algo vai acontecer. Gera a variável automática sorte.
+
+= sorteia <min> <max>: Gera um número aleatório entre dois valores.
+
+ Persistência e Sistema
+salve <variável>: Cria um arquivo .save com o valor atual.
+
+carregue <variável>: Recupera o valor salvo anteriormente.
+
+comando <texto>: Executa um comando direto no terminal do PC.
+
+espera <segundos>: Faz uma pausa dramática na execução.
