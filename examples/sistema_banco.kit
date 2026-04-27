@@ -1,0 +1,213 @@
+# Sistema Bancário Simples - KitCode
+# Demonstração de sistema completo com menus e persistência
+
+# Variáveis globais do sistema
+var saldo 1000.00
+var numero_conta 12345
+var nome_cliente "João Silva"
+var limite 500.00
+var saques_hoje 0
+var limite_saques 3
+
+# Função de limpeza e cabeçalho
+var mostrar_cabecalho 1
+
+# Programa principal
+limpar
+cor 3
+diga "=================================="
+diga "    BANCO KITCODE v1.0        "
+diga "=================================="
+diga ""
+cor 7
+
+# Informações da conta
+cor 2
+diga "=== DADOS DA CONTA ==="
+diga "Titular: " nome_cliente
+diga "Conta: " numero_conta
+diga "Saldo: R$ " saldo
+diga "Limite: R$ " limite
+diga ""
+cor 7
+
+# Menu principal
+var opcao 0
+repetir 100  # Loop infinito até sair
+    
+    # Verifica limite de saques diários
+    se saques_hoje >= limite_saques
+        cor 1
+        diga "⚠️  ATENÇÃO: Limite diário de saques atingido!"
+        cor 7
+        diga ""
+    fim
+    
+    # Exibe menu
+    cor 6
+    diga "=== MENU PRINCIPAL ==="
+    cor 7
+    diga "1 - Consultar Saldo"
+    diga "2 - Depositar"
+    diga "3 - Sacar"
+    diga "4 - Transferir"
+    diga "5 - Extrato Simplificado"
+    diga "6 - Informações da Conta"
+    diga "7 - Sair"
+    diga ""
+    
+    pergunta "Digite sua opção: " opcao
+    diga ""
+    
+    # Processa opção
+    se opcao == 1
+        # Consultar Saldo
+        cor 2
+        diga "=== CONSULTA DE SALDO ==="
+        diga "Saldo atual: R$ " saldo
+        diga "Limite disponível: R$ " limite
+        calc total saldo + limite
+        diga "Total disponível: R$ " total
+        diga ""
+        cor 7
+        
+    senao se opcao == 2
+        # Depositar
+        cor 3
+        diga "=== DEPÓSITO ==="
+        pergunta "Valor do depósito: R$ " valor_deposito
+        
+        se valor_deposito > 0
+            calc saldo saldo + valor_deposito
+            cor 2
+            diga "✅ Depósito realizado com sucesso!"
+            diga "Novo saldo: R$ " saldo
+            cor 7
+        senao
+            cor 1
+            diga "❌ Valor inválido para depósito!"
+            cor 7
+        fim
+        diga ""
+        
+    senao se opcao == 3
+        # Sacar
+        cor 4
+        diga "=== SAQUE ==="
+        
+        se saques_hoje >= limite_saques
+            cor 1
+            diga "❌ Limite diário de saques atingido!"
+            cor 7
+            diga ""
+            fim
+        fim
+        
+        pergunta "Valor do saque: R$ " valor_saque
+        
+        se valor_saque <= 0
+            cor 1
+            diga "❌ Valor inválido!"
+        senao se valor_saque > saldo
+            cor 1
+            diga "❌ Saldo insuficiente!"
+            diga "Saldo disponível: R$ " saldo
+        senao se valor_saque > 1000
+            cor 1
+            diga "❌ Valor máximo por saque: R$ 1000.00"
+        senao
+            calc saldo saldo - valor_saque
+            calc saques_hoje saques_hoje + 1
+            cor 2
+            diga "✅ Saque realizado com sucesso!"
+            diga "Valor sacado: R$ " valor_saque
+            diga "Novo saldo: R$ " saldo
+            diga "Saques realizados hoje: " saques_hoje "/" limite_saques
+            cor 7
+        fim
+        diga ""
+        
+    senao se opcao == 4
+        # Transferir
+        cor 5
+        diga "=== TRANSFERÊNCIA ==="
+        pergunta "Número da conta destino: " conta_destino
+        pergunta "Valor da transferência: R$ " valor_transferencia
+        
+        se valor_transferencia <= 0
+            cor 1
+            diga "❌ Valor inválido!"
+        senao se valor_transferencia > saldo
+            cor 1
+            diga "❌ Saldo insuficiente!"
+            diga "Saldo disponível: R$ " saldo
+        senao
+            calc saldo saldo - valor_transferencia
+            cor 2
+            diga "✅ Transferência realizada com sucesso!"
+            diga "Conta destino: " conta_destino
+            diga "Valor transferido: R$ " valor_transferencia
+            diga "Novo saldo: R$ " saldo
+            cor 7
+        fim
+        diga ""
+        
+    senao se opcao == 5
+        # Extrato Simplificado
+        cor 6
+        diga "=== EXTRATO SIMPLIFICADO ==="
+        diga "Data: 27/04/2026"
+        diga "Titular: " nome_cliente
+        diga "Conta: " numero_conta
+        diga ""
+        diga "Transações do dia:"
+        diga "• Saldo anterior: R$ 1000.00"
+        diga "• Saques realizados: " saques_hoje
+        diga "• Saldo atual: R$ " saldo
+        diga ""
+        diga "Total disponível (com limite): R$ " saldo + limite
+        diga ""
+        cor 7
+        
+    senao se opcao == 6
+        # Informações da Conta
+        cor 2
+        diga "=== INFORMAÇÕES DA CONTA ==="
+        diga "Banco: KitCode Bank"
+        diga "Titular: " nome_cliente
+        diga "Conta Corrente: " numero_conta
+        diga "Agência: 0001"
+        diga ""
+        diga "Saldos:"
+        diga "• Saldo: R$ " saldo
+        diga "• Limite: R$ " limite
+        diga "• Total: R$ " saldo + limite
+        diga ""
+        diga "Limites:"
+        diga "• Saques diários: " saques_hoje "/" limite_saques
+        diga "• Máximo por saque: R$ 1000.00"
+        diga ""
+        cor 7
+        
+    senao se opcao == 7
+        # Sair
+        cor 2
+        diga "=== ENCERRANDO SESSÃO ==="
+        diga "Obrigado por usar o Banco KitCode!"
+        diga "Saldo final: R$ " saldo
+        diga "Volte sempre!"
+        sair
+        
+    senao
+        # Opção inválida
+        cor 1
+        diga "❌ Opção inválida! Tente novamente."
+        diga ""
+        cor 7
+    fim
+    
+    # Pausa antes de mostrar menu novamente
+    se opcao != 7
+        espera 2
+    fim
+fim

@@ -1,0 +1,120 @@
+# Binários executáveis
+kitcode
+kitcode.exe
+motor
+motor.exe
+kit_novo
+kit_novo.exe
+*.exe
+*.out
+*.app
+
+# Arquivos objeto
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# Arquivos de compilação
+*.d
+*.i
+*.s
+*.asm
+
+# Debug e profiling
+*.debug
+*.prof
+*.gcov
+*.gcda
+*.gcno
+coverage/
+htmlcov/
+
+# IDE e editores
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp
+*.temp
+temp/
+tmp/
+.cache/
+
+# Arquivos de sistema
+*~
+#*
+.#*
+
+# Backup e arquivos antigos
+*.bak
+*.backup
+*.old
+*.orig
+
+# Dependências
+node_modules/
+vendor/
+
+# Documentação gerada
+doxygen/
+docs/_build/
+
+# Testes
+test_output/
+test_results/
+*.test
+
+# Performance
+benchmark_results/
+*.bench
+
+# Configuração local
+.env
+.env.local
+config.local.*
+
+# Scripts de usuário
+user_scripts/
+custom_examples/
+
+# Arquivos de dados
+*.db
+*.sqlite
+*.data
+
+# Compilador específico
+*.stackdump
+*.su
+*.idb
+*.pdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Autotools
+autom4te.cache/
+configure
+aclocal.m4
+config.h*
+config.log
+config.status
+libtool
+stamp-h1
+
+# Pacotes
+*.deb
+*.rpm
+*.tar.gz
+*.zip
+*.7z

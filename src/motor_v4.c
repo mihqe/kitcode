@@ -29,11 +29,11 @@
 #endif
 
 typedef struct { char n[50]; double v; } Var;
-Var mem[5000]; int total_vars = 0;
-double vetores[100][100];
-char linhas[3000][500]; int total_linhas = 0, ip = 0;
+Var mem[10000]; int total_vars = 0;
+double vetores[200][200];
+char linhas[5000][500]; int total_linhas = 0, ip = 0;
 
-int loop_inicio[100], loop_conta[100], lvl_loop = 0, stack_se[100], lvl_se = 0;
+int loop_inicio[200], loop_conta[200], lvl_loop = 0, stack_se[200], lvl_se = 0;
 
 void set_n(char *n, double v) {
     for(int i=0; i<total_vars; i++) if(strcmp(mem[i].n, n)==0) { mem[i].v=v; return; }
@@ -44,7 +44,6 @@ double get_n(char *n) {
     return atof(n);
 }
 
-// Algoritmo de Bresenham para desenhar linhas perfeitas no terminal!
 void desenhar_linha(int x0, int y0, int x1, int y1, int cor, char *c) {
     int dx = abs(x1 - x0), sx = x0 < x1 ? 1 : -1;
     int dy = -abs(y1 - y0), sy = y0 < y1 ? 1 : -1;
@@ -60,13 +59,20 @@ void desenhar_linha(int x0, int y0, int x1, int y1, int cor, char *c) {
     fflush(stdout);
 }
 
+void pergunta_seguro(char *prompt, char *variavel) {
+    printf("%s ", prompt);
+    char in[100];
+    if(fgets(in, sizeof(in), stdin)) {
+        in[strcspn(in, "\n")] = '\0';
+        set_n(variavel, atof(in));
+    }
+}
+
 void executar_linha(char *ln) {
-    // Agora o motor lê até 7 pedaços de informação por linha!
     char p1[50]="", p2[50]="", p3[50]="", p4[50]="", p5[50]="", p6[50]="", p7[50]="";
     int lidos = sscanf(ln, "%49s %49s %49s %49s %49s %49s %49s", p1, p2, p3, p4, p5, p6, p7);
     if(ln[0] == '#' || lidos < 1) return;
 
-    // --- LÓGICA E CONTROLE ---
     if(strcmp(p1, "se") == 0) {
         lvl_se++; if(stack_se[lvl_se-1] == 1) stack_se[lvl_se] = 1;
         else if(get_n(p2) == get_n(p4)) stack_se[lvl_se] = 2; else stack_se[lvl_se] = 1; return;
@@ -78,7 +84,6 @@ void executar_linha(char *ln) {
     }
     if(lvl_se > 0 && stack_se[lvl_se] == 1) return;
 
-    // --- SISTEMA DE TEXTO ---
     if(strcmp(p1, "diga") == 0) {
         char *ptr = strstr(ln, "diga") + 4;
         while(*ptr == ' ' || *ptr == '\t') ptr++; if(*ptr == '\"') ptr++; 
@@ -91,17 +96,12 @@ void executar_linha(char *ln) {
             if(!achou) printf("%s ", tok); tok = strtok(NULL, " ");
         } printf("\n");
     }
-    
-    // --- NOVIDADE: RENDERIZAÇÃO GRÁFICA AVANÇADA ---
-    // ponto <x> <y> <cor> <char>
     else if(strcmp(p1, "ponto") == 0) { 
         printf("\033[1;3%dm\033[%d;%dH%s", (int)get_n(p4), (int)get_n(p3), (int)get_n(p2), p5); fflush(stdout); 
     }
-    // linha <x1> <y1> <x2> <y2> <cor> <char>
     else if(strcmp(p1, "linha") == 0) {
         desenhar_linha((int)get_n(p2), (int)get_n(p3), (int)get_n(p4), (int)get_n(p5), (int)get_n(p6), p7);
     }
-    // bloco <x> <y> <largura> <altura> <cor> <char>
     else if(strcmp(p1, "bloco") == 0) {
         int x = get_n(p2), y = get_n(p3), w = get_n(p4), h = get_n(p5), cor = get_n(p6);
         printf("\033[1;3%dm", cor);
@@ -111,16 +111,15 @@ void executar_linha(char *ln) {
         }
         fflush(stdout);
     }
-    
-    // --- O MOTOR 2D E CONTROLES ---
     else if(strcmp(p1, "var") == 0) set_n(p2, get_n(p3));
     else if(strcmp(p1, "tecla") == 0) set_n(p2, ler_tecla());
     else if(strcmp(p1, "desenha") == 0) { printf("\033[%d;%dH%s", (int)get_n(p3), (int)get_n(p2), p4); fflush(stdout); }
     else if(strcmp(p1, "esconde") == 0) printf("\033[?25l");
     else if(strcmp(p1, "mostra") == 0) printf("\033[?25h");
-
-    // --- UI, MATEMÁTICA E FÍSICA ---
-    else if(strcmp(p1, "pergunta") == 0) { printf("%s ", strstr(ln, p2) + strlen(p2) + 1); char in[100]; scanf("%s", in); set_n(p2, atof(in)); }
+    else if(strcmp(p1, "pergunta") == 0) {
+        char *ptr = strstr(ln, p2) + strlen(p2) + 1;
+        pergunta_seguro(ptr, p2);
+    }
     else if(strcmp(p1, "limpar") == 0) printf("\033[H\033[J");
     else if(strcmp(p1, "cor") == 0) printf("\033[1;3%dm", (int)get_n(p2));
     else if(strcmp(p1, "ir") == 0) printf("\033[%d;%dH", (int)get_n(p3), (int)get_n(p2));
@@ -154,7 +153,7 @@ void executar_linha(char *ln) {
 int main(int argc, char *argv[]) {
     srand(time(NULL)); stack_se[0] = 2;
     if(argc == 1) {
-        printf("\033[H\033[J\033[1;36m=== KITCODE SHELL 4.5 GRAFICO ===\033[0m\nDigite comandos...\n");
+        printf("\033[H\033[J\033[1;36m=== KITCODE SHELL 5.0 MELHORADO ===\033[0m\nDigite comandos...\n");
         char linha[500];
         while(1) { printf("\033[1;32m>\033[0m "); fgets(linha, 500, stdin); linha[strcspn(linha, "\r\n")] = 0; executar_linha(linha); }
     }
