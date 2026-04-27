@@ -1,0 +1,24 @@
+Como instalar o KitCode globalmente no seu linux (esse teste foi usado no zorin OS não sei se fuciona em outras distros)
+
+
+1. Primeiro, compilamos ele com o nome oficial:
+
+Bash
+gcc motor_v3.c -o kitcode -lm
+
+
+2. Agora, movemos ele para a pasta de programas globais do Linux:
+(Como essa é uma pasta do sistema, o Linux vai pedir a sua senha de usuário)
+
+Bash
+sudo mv kitcode /usr/local/bin/
+
+
+
+ O que isso muda na sua vida?
+Acabou a bagunça. A partir de agora, você pode criar uma pasta na sua Área de Trabalho, em Documentos, nos Downloads... Não importa. Você não precisa mais do ./ nem do arquivo .c junto.
+
+Tudo o que você precisa fazer é criar o seu arquivo .kit (ex: tt.kit) e digitar no terminal:
+
+Bash
+kitcode tt.kit
