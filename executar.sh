@@ -1,17 +1,22 @@
-cat << 'EOF' > executar.sh
 #!/bin/bash
-# KitCode 1.1 - Auto-Updater & Runner
 
-echo "--- Verificando atualizações ---"
-git pull origin main --quiet
+# Configurações - Substitua pelo seu link RAW do GitHub
+GITHUB_URL="https://raw.githubusercontent.com/mihqe/kitcode/main/motor11.c"
 
-echo "--- Compilando Motor 1.1 ---"
+echo "--- 🔄 Sincronizando Motor com GitHub ---"
+
+# 1. Baixa a versão mais recente do GitHub e substitui a local
+curl -s -O $GITHUB_URL
+
+# 2. Compila o motor baixado (O -lm é essencial para a matemática)
 gcc motor11.c -o kitcode -lm
 
+# 3. Verifica se a compilação deu certo
 if [ $? -eq 0 ]; then
-    echo "--- Iniciando Script ---"
+    echo "--- ✅ Motor atualizado e compilado ---"
+    echo "--- 🚀 Rodando script: $1 ---"
+    echo ""
     ./kitcode "$1"
 else
-    echo "Erro: O motor não conseguiu compilar. Verifique o código C."
+    echo "--- ❌ ERRO: Falha na compilação do motor do GitHub ---"
 fi
-EOF
