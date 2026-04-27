@@ -4,7 +4,7 @@ Como instalar o KitCode globalmente no seu linux (esse teste foi usado no zorin 
 1. Primeiro, compilamos ele com o nome oficial:
 
 Bash
-gcc motor_v3.c -o kitcode -lm
+gcc motor_v4.c -o kitcode -lm - ou a versão que tiver
 
 
 2. Agora, movemos ele para a pasta de programas globais do Linux:
