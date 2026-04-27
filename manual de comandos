@@ -2,7 +2,11 @@ Guia de Comandos Detalhado
 Comunicação e Interface
 diga: Exibe mensagens ou o conteúdo de variáveis no terminal.
 
+<<<<<<< HEAD
 digite: Exibe o texto caractere por caractere
+=======
+digite: Exibe o texto caractere por caractere.
+>>>>>>> 00aaac8447b86346fc40baf7c9e7442758012ed2
 
 cor: Altera a cor da fonte no terminal (1: Vermelho, 2: Verde, 3: Azul, 0: Padrão).
 
