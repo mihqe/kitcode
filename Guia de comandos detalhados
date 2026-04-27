@@ -1,0 +1,31 @@
+Guia de Comandos Detalhado
+Comunicação e Interface
+diga: Exibe mensagens ou o conteúdo de variáveis no terminal.
+
+digite: Exibe o texto caractere por caractere, ideal para diálogos de RPG.
+
+cor: Altera a cor da fonte no terminal (1: Vermelho, 2: Verde, 3: Azul, 0: Padrão).
+
+limpar: Remove todo o conteúdo anterior do terminal.
+
+pula: Insere uma quebra de linha no texto.
+
+Lógica e Dados
+pergunta: Solicita uma entrada do usuário e armazena o valor em uma variável específica.
+
+se / senao / fim se: Estrutura de decisão para executar blocos de código baseados em comparações.
+
+chance: Sorteia uma probabilidade (0 a 100) e define a variável "sorte" como 1 (sucesso) ou 0 (falha).
+
+= sorteia: Gera um número aleatório entre dois valores definidos.
+
+Persistência e Integração
+salve: Registra o valor de uma variável em um arquivo físico de salvamento.
+
+carregue: Recupera dados salvos anteriormente para uso no script atual.
+
+comando: Permite que o script envie instruções diretamente para o terminal do computador.
+
+data: Exibe o horário atual do sistema.
+
+espera: Pausa a execução do código por um número determinado de segundos.
