@@ -169,8 +169,6 @@ MIT License - Veja [LICENSE](LICENSE) para detalhes
 
 ## 👨‍💻 Autor
 
-Desenvolvido com ❤️ por **mihqe**
+Desenvolvido com ❤️ 
 
 ---
-
-**Divirta-se codificando em KitCode!** 🎨✨
