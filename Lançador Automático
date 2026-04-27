@@ -1,0 +1,15 @@
+Para facilitar o uso e garantir que você sempre tenha a versão mais recente, criamos o script executar.sh.
+
+O que ele faz:
+
+Busca atualizações novas no GitHub automaticamente.
+
+Compila o motor sozinho (você não precisa digitar comandos de compilador).
+
+Roda o seu script .kit na hora.
+
+Como usar:
+No terminal, basta digitar:
+
+Bash
+./executar.sh nome_do_seu_arquivo.kit
