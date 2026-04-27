@@ -1,1 +1,5 @@
 lembre de verifica a versão nos comandos 
+ e toda atualização faça o
+
+gcc motor_v3.c -o kitcode -lm
+sudo mv kitcode /usr/local/bin/
