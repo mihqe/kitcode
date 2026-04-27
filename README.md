@@ -204,13 +204,32 @@ Dúvidas, sugestões ou ideias? [Participe das discussões](https://github.com/m
 - 📖 [Documentação Completa](docs/)
 - 💬 [GitHub Discussions](https://github.com/mihqe/kitcode/discussions)
 - 🐛 [Reportar Issues](https://github.com/mihqe/kitcode/issues)
-- 📧 [Email de Contato](mailto:contato@kitcode.dev)
+- 📧 [Contato via GitHub Issues](https://github.com/mihqe/kitcode/issues)
 
 ## 🏆 Créditos
 
 - Desenvolvido com ❤️ no Brasil
-- Criador: [mihqe](https://github.com/mihqe)
+- Mantido pela comunidade open source
 - Contribuidores: [Veja no GitHub](https://github.com/mihqe/kitcode/graphs/contributors)
+
+## ⚖️ Avisos Importantes
+
+### 🛡️ Segurança e Responsabilidade
+- **Use por conta e risco**: Sem garantias de qualquer tipo
+- **Responsabilidade do usuário**: Pela segurança e uso adequado
+- **Revisão necessária**: Teste antes de usar em produção
+- [Política de Segurança Completa](docs/SECURITY.md)
+
+### ⚠️ Termos Legais
+- **Isenção de responsabilidade**: Não nos responsabilizamos por danos
+- **Uso de IA**: Parte do desenvolvimento assistida por IA, revisada por humanos
+- **Direitos autorais**: Licenciado sob MIT com atribuição obrigatória
+- [Termos Legais Completos](docs/LEGAL.md)
+
+### 🚫 Usos Proibidos
+- Desenvolvimento de malware ou atividades ilegais
+- Ataques cibernéticos ou hacking não autorizado
+- Violação de privacidade ou fraude eletrônica
 
 ---
 
@@ -218,6 +237,6 @@ Dúvidas, sugestões ou ideias? [Participe das discussões](https://github.com/m
 
 **[⬆️ Voltar ao Topo](#kitcode---linguagem-de-programação-brasileira)**
 
-Made with ❤️ in Brazil
+Made with ❤️ in Brazil • Use com responsabilidade
 
 </div>
