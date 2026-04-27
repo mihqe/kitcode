@@ -1,5 +1,9 @@
 lembre de verifica a versão nos comandos 
  e toda atualização faça o
-
-gcc motor_v3.c -o kitcode -lm
+           !--------------------------lembre de colocar a versão correta que estar escrita np motor
+gcc motor_v4.c -o kitcode -lm 
 sudo mv kitcode /usr/local/bin/
+
+
+
+sei que está muito confuso mas vou tentar melhora e estabilizar melhor
