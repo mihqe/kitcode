@@ -1,0 +1,63 @@
+# Teste de Strings - KitCode v6.0
+# Demonstração dos novos comandos de texto
+
+diga "=== TESTE DE STRINGS KITCODE v6.0 ==="
+diga ""
+
+# Criando variáveis de texto
+texto nome "João Silva"
+texto saudacao "Olá, "
+texto programa "KitCode"
+texto versao "v6.0"
+
+# Testando comando diga com strings
+diga saudacao nome
+diga "Bem-vindo ao " programa " " versao
+diga ""
+
+# Testando tamanho de strings
+tamanho nome_tamanho nome
+diga "Tamanho do nome: " nome_tamanho
+diga ""
+
+# Testando junção de strings
+texto mensagem_completa ""
+juntar mensagem_completa saudacao nome
+juntar mensagem_completa "! Seja bem-vindo ao "
+juntar mensagem_completa programa " "
+juntar mensagem_completa versao
+diga "Mensagem completa: " mensagem_completa
+diga ""
+
+# Testando pedaço (substring)
+texto primeiro_nome ""
+pedaco primeiro_nome nome 0 3
+diga "Primeiro nome: " primeiro_nome
+diga ""
+
+# Testando maiúsculas e minúsculas
+texto nome_maiusculo ""
+texto nome_minusculo ""
+maiuscula nome_maiusculo nome
+minuscula nome_minusculo nome
+diga "Nome maiúsculo: " nome_maiusculo
+diga "Nome minúsculo: " nome_minusculo
+diga ""
+
+# Testando troca de texto
+texto nome_troca ""
+trocar nome_troca nome "João" "Maria"
+diga "Nome trocado: " nome_troca
+diga ""
+
+# Testando verificação de conteúdo
+contem tem_joao nome "João" resultado
+diga "Contém 'João'? " resultado
+diga ""
+
+# Testando posição de texto
+posicao posicao_a nome "a" resultado_pos
+diga "Posição de 'a': " resultado_pos
+diga ""
+
+diga "=== TESTE CONCLUÍDO ==="

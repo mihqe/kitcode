@@ -113,13 +113,7 @@ O KitCode é um projeto de software livre e educacional fornecido "COMO ESTÁ" (
 
 ---
 
-## 🛡️ **PROTEÇÃO CONTRA HACKS E ABUSOS**
 
-### **Medidas Técnicas:**
-- 🔒 **Código revisado** para vulnerabilidades
-- 🔒 **Validação rigorosa** de entrada de dados
-- 🔒 **Sandbox natural** do ambiente terminal
-- 🔒 **Sem acesso direto** ao sistema operacional
 
 ### **Monitoramento e Auditoria:**
 - 👁️ **Logs de uso** (quando implementados)

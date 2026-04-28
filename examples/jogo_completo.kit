@@ -1,0 +1,103 @@
+# Jogo Completo com Strings e Matemática - KitCode v6.0
+
+diga "=== JOGO ADIVINHE O NÚMERO ==="
+diga ""
+
+# Textos do jogo
+texto titulo "Jogo de Adivinhação"
+texto mensagem_boa "Parabéns! Você acertou!"
+texto mensagem_ruim "Errado! Tente novamente."
+texto mensagem_dica "Dica: O número é "
+
+# Variáveis numéricas
+constante PI 3.14159
+var numero_secreto 0
+var palpite 0
+var tentativas 0
+var max_tentativas 5
+
+# Gerar número secreto entre 1 e 100
+sorteia numero_secreto 1 100
+
+diga titulo
+diga "Pensei em um número entre 1 e 100"
+diga "Você tem " max_tentativas " tentativas"
+diga ""
+
+# Loop do jogo
+repetir max_tentativas
+    calc tentativas tentativas + 1
+    
+    pergunta "Tentativa " tentativas ": Digite seu palpite: " palpite
+    
+    se palpite == numero_secreto
+        diga_texto mensagem_boa
+        diga "Você usou " tentativas " tentativas!"
+        
+        # Cálculo matemático de performance
+        calc performance 100 - (tentativas - 1) * 20
+        se performance < 0
+            calc performance 0
+        fim
+        diga "Sua performance: " performance "%"
+        
+        # Cálculo de seno e cosseno para diversão
+        seno seno_palpite palpite
+        cosseno cos_palpite palpite
+        diga "Seno do seu palpite: " seno_palpite
+        diga "Cosseno do seu palpite: " cos_palpite
+        
+        fim
+    senao se palpite < numero_secreto
+        diga_texto mensagem_ruim
+        diga "Muito baixo!"
+        
+        # Dica matemática
+        calc diferenca numero_secreto - palpite
+        se diferenca <= 5
+            diga_texto mensagem_dica
+            diga "MUITO perto!"
+        senao se diferenca <= 15
+            diga_texto mensagem_dica
+            diga "perto."
+        senao
+            diga_texto mensagem_dica
+            diga "longe."
+        fim
+    senao
+        diga_texto mensagem_ruim
+        diga "Muito alto!"
+        
+        # Dica matemática
+        calc diferenca palpite - numero_secreto
+        se diferenca <= 5
+            diga_texto mensagem_dica
+            diga "MUITO perto!"
+        senao se diferenca <= 15
+            diga_texto mensagem_dica
+            diga "perto."
+        senao
+            diga_texto mensagem_dica
+            diga "longe."
+        fim
+    fim
+    
+    diga ""
+fim
+
+# Mensagem final se não acertou
+se palpite != numero_secreto
+    diga "Suas tentativas acabaram!"
+    diga "O número secreto era: " numero_secreto
+    
+    # Cálculo de estatísticas
+    calc taxa_acerto 0
+    diga "Taxa de acerto: " taxa_acerto "%"
+    
+    # Mostrar valor de PI para referência
+    diga "Valor de PI para sua cultura: " PI
+fim
+
+diga ""
+diga "=== FIM DO JOGO ==="
+diga "KitCode v6.0 - Super Expansão"
