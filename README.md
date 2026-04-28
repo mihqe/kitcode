@@ -18,13 +18,13 @@
 
 ## Sobre o Projeto
 
-O KitCode é um projeto de linguagem de programação desenvolvido no Brasil que utiliza a sintaxe em português para facilitar o entendimento da lógica de programação. O interpretador é construído sobre a linguagem C, permitindo o processamento de comandos e a renderização de elementos gráficos no terminal.
+O KitCode é um projeto de linguagem de programação desenvolvido no Brasil que utiliza a sintaxe em português para facilitar a compreensão da lógica de programação. O interpretador é construído sobre a linguagem C, permitindo o processamento de comandos lógicos e a renderização de elementos gráficos no terminal.
 
 ### Estado do Desenvolvimento
 O projeto encontra-se em **fase de desenvolvimento ativo**. Refinamentos na arquitetura e na estabilidade do sistema são realizados periodicamente para garantir um ambiente seguro e funcional.
 
-### Metodologia
-A estruturação do motor v5.0 e a otimização dos algoritmos de gerenciamento de dados foram realizadas com o suporte de **Inteligência Artificial**. Esta abordagem foi integrada ao fluxo de trabalho para auxiliar na depuração de código complexo e no design eficiente de sistemas de memória.
+### Metodologia e IA
+A estruturação do motor v5.0 e a otimização dos algoritmos de gerenciamento de dados foram realizadas com o suporte de **Inteligência Artificial**. Esta abordagem foi integrada ao fluxo de trabalho como ferramenta de engenharia para auxiliar na depuração de código complexo e no design eficiente de sistemas de memória de larga escala.
 
 ---
 
@@ -32,13 +32,13 @@ A estruturação do motor v5.0 e a otimização dos algoritmos de gerenciamento 
 
 <div align="center">
 
-### SISTEMA
+### NÚCLEO DO SISTEMA
 ![Sintaxe PT-BR](https://img.shields.io/badge/Sintaxe-PT--BR-blue?style=for-the-badge) ![C Engine](https://img.shields.io/badge/Engine-Em%20C-darkred?style=for-the-badge) ![v5.0 Motor](https://img.shields.io/badge/Motor-v5.0-dodgerblue?style=for-the-badge)
 
-### PERFORMANCE
+### PERFORMANCE E MEMÓRIA
 ![10k Vars](https://img.shields.io/badge/Variáveis-10.000-brightgreen?style=for-the-badge) ![Matriz 200x200](https://img.shields.io/badge/Matriz%20Gráfica-200x200-limegreen?style=for-the-badge) ![Segurança](https://img.shields.io/badge/Segurança-fgets-teal?style=for-the-badge)
 
-### SUPORTE
+### SUPORTE MULTIPLATAFORMA
 ![Windows](https://img.shields.io/badge/Windows-Suportado-dodgerblue?style=for-the-badge) ![Linux](https://img.shields.io/badge/Linux-Suportado-darkorange?style=for-the-badge) ![macOS](https://img.shields.io/badge/macOS-Suportado-silver?style=for-the-badge)
 
 </div>
@@ -139,11 +139,10 @@ O KitCode v5.0 utiliza técnicas para garantir a robustez do interpretador:
 Interessados em colaborar com o código devem:
  1. Realizar o **Fork** do repositório.
  2. Criar uma branch para sua funcionalidade.
- 3. Abrir um **Pull Request** detalhando as melhorias.
+ 3. Abrir um **Pull Request** detalhando as melhorias técnicas.
 ## Licença e Avisos Legais
  * **Licença:** Este projeto é distribuído sob a **Licença MIT**.
- * **Uso de IA:** O desenvolvimento conta com assistência de IA para otimização de código.
- * **Isenção:** Como projeto em fase beta, os desenvolvedores não se responsabilizam por usos indevidos ou falhas em ambientes críticos.
+ * **Isenção:** Como projeto em fase experimental, o uso em sistemas de produção é de inteira responsabilidade do usuário. Os desenvolvedores não se responsabilizam por danos decorrentes de falhas no interpretador.
 <div align="center">
 **KitCode - Tecnologia Brasileira em Desenvolvimento**
 Desenvolvido com foco em lógica, performance e acessibilidade.
