@@ -1,242 +1,120 @@
 # KitCode - Linguagem de Programação Brasileira
-
 <div align="center">
-
-![KitCode Logo](https://img.shields.io/badge/KitCode-v5.0-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Language](https://img.shields.io/badge/Language-Português-red?style=for-the-badge)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-orange?style=for-the-badge)
-
-**Linguagem de programação poderosa e intuitiva desenvolvida no Brasil**
-
-[Documentação](docs/) • [Exemplos](examples/) • [Instalação](docs/INSTALL.md) • [Contribuir](#contribuição)
-
+**Interpretador de comandos e motor gráfico baseado em C com sintaxe em português**
+Documentação • Exemplos • Instalação • Licença
 </div>
+## Sobre o Projeto
+O KitCode é um projeto de linguagem de programação desenvolvido no Brasil que utiliza a sintaxe em português para facilitar a lógica de programação. O interpretador é construído sobre a linguagem C, permitindo a execução de comandos lógicos e a renderização de elementos gráficos diretamente no terminal.
+### Desenvolvimento e Metodologia
+O projeto encontra-se em **fase de desenvolvimento ativo**. A arquitetura do sistema e a otimização dos componentes do motor v5.0 foram elaboradas com o auxílio de ferramentas de **Inteligência Artificial**, utilizadas especificamente para a estruturação de algoritmos complexos, depuração de código e organização da lógica de memória.
+## Arquitetura do Sistema
+O diagrama abaixo descreve o fluxo de processamento do KitCode, desde a leitura do script até a exibição no terminal:
+```text
+    +-------------------------------------------------------+
+    |                  ENTRADA (Script .kit)                |
+    +---------------------------+---------------------------+
+                                |
+                                v
+    +---------------------------+---------------------------+
+    |            INTERPRETADOR (motor_v4.c)                 |
+    |       (Análise de sintaxe e gestão de memória)        |
+    +---------------------------+---------------------------+
+                                |
+             +------------------+------------------+
+             |                  |                  |
+             v                  v                  v
+    +----------------+  +----------------+  +----------------+
+    |     LÓGICA     |  |    MEMÓRIA     |  |    GRÁFICOS    |
+    | (se / repetir) |  | (10k Variáveis)|  | (Matriz 200x200)|
+    +----------------+  +----------------+  +----------------+
+             |                  |                  |
+             +------------------+------------------+
+                                |
+                                v
+    +-------------------------------------------------------+
+    |                  SAÍDA (Terminal)                     |
+    +-------------------------------------------------------+
 
-## 🚀 Sobre o KitCode
-
-KitCode é uma linguagem de programação brasileira que combina a simplicidade de linguagens modernas com o desempenho do C. Desenvolvida para ser acessível a iniciantes enquanto oferece recursos avançados para desenvolvedores experientes.
-
-### ✨ Características Principais
-
-- 🇧🇷 **Sintaxe em Português**: Comandos intuitivos como `diga`, `se`, `repetir`
-- 🎨 **Gráficos 2D**: Sistema avançado de renderização no terminal
-- 🌐 **Multiplataforma**: Windows, Linux e macOS
-- ⚡ **Alta Performance**: Compilado em C com otimizações
-- 💾 **Memória Expandida**: Suporte para até 10.000 variáveis
-- 🔒 **Segurança**: Validação segura de entrada de dados
-- 📚 **Documentação Completa**: Guias detalhados e exemplos práticos
-
-## 🛠️ Instalação Rápida
-
-### Pré-requisitos
-- Git
-- Compilador C (GCC/Clang)
-- Shell (Bash ou similar)
-
-### Linux/macOS
+```
+## Instalação
+### Requisitos
+ * Compilador C (GCC ou Clang)
+ * Git
+ * Ambiente de linha de comando
+### Procedimento
 ```bash
+# Clonar o repositório
 git clone https://github.com/mihqe/kitcode.git
 cd kitcode
+
+# Compilação do motor v5.0
 gcc -o kitcode src/motor_v4.c -lm
-sudo cp bin/kitcode /usr/local/bin/
-```
 
-### Windows
-```bash
-git clone https://github.com/mihqe/kitcode.git
-cd kitcode
-gcc -o kitcode.exe src/motor_v4.c -lm
-# Adicione kitcode.exe ao PATH do sistema
-```
-
-### Verificação
-```bash
-kitcode --version
-```
-
-## 📖 Guia Rápido
-
-### Olá Mundo
-```kitcode
-diga "Olá, KitCode!"
-```
-
-### Variáveis e Operações
-```kitcode
-var numero 42
-diga "O número é: " numero
-
-calc resultado numero + 8
-diga "Resultado: " resultado
-```
-
-### Estruturas de Controle
-```kitcode
-var idade 18
-se idade >= 18
-    diga "Maior de idade"
-senao
-    diga "Menor de idade"
-fim
-```
-
-### Loops
-```kitcode
-var contador 0
-repetir 5
-    diga "Contagem: " contador
-    calc contador contador + 1
-fim
-```
-
-### Gráficos
-```kitcode
-limpar
-cor 2
-ponto 10 10 1 "█"
-linha 5 5 20 20 3 "─"
-bloco 15 15 10 5 4 "■"
-```
-
-## 📁 Estrutura do Projeto
+# Instalação (opcional para Linux/macOS)
+sudo cp kitcode /usr/local/bin/
 
 ```
+## Guia de Uso
+### Estrutura de Pastas
+```text
 kitcode/
-├── src/                    # Código-fonte principal
-│   └── motor_v4.c         # Motor da linguagem v5.0
-├── bin/                    # Executáveis compilados
-│   └── kitcode            # Executável principal
-├── docs/                   # Documentação completa
-│   ├── README.md          # Este arquivo
-│   ├── INSTALL.md         # Guia de instalação detalhado
-│   ├── USAGE.md           # Manual de uso completo
-│   ├── MANUAL.md          # Manual de referência
-│   ├── SHORTCUTS.md       # Atalhos e comandos
-│   └── LICENSE           # Licença MIT
-├── examples/               # Exemplos práticos
-│   └── calculadora.kit    # Calculadora simples
-├── scripts/               # Scripts auxiliares
-│   ├── instalar.sh       # Instalação automática Linux
-│   ├── setup_windows.bat # Instalação Windows
-│   └── SYNC.sh           # Sincronização
-└── .vscode/              # Configuração VS Code
+├── bin/            # Executáveis do sistema
+├── docs/           # Arquivos de documentação técnica
+├── examples/       # Exemplos de scripts (.kit)
+├── src/            # Código-fonte em C
+└── scripts/        # Utilitários de configuração
+
 ```
+### Exemplo de Sintaxe
+O KitCode utiliza comandos claros para facilitar o entendimento do fluxo:
+```kitcode
+var valor 10
+se valor > 5
+    diga "O valor é superior a cinco"
+senao
+    diga "O valor é inferior ou igual a cinco"
+fim
 
-## 🎨 Referência de Comandos
+```
+## Referência de Comandos
+### Interface e Sistema
+| Comando | Descrição |
+|---|---|
+| diga | Exibe texto ou o valor de uma variável. |
+| pergunta | Recebe uma entrada do usuário e armazena. |
+| limpar | Limpa as informações do terminal. |
+| espera | Pausa a execução por um tempo determinado. |
+### Lógica e Matemática
+| Comando | Descrição |
+|---|---|
+| var | Reserva espaço na memória para um dado. |
+| calc | Executa operações aritméticas básicas. |
+| pot / raiz | Funções de potência e raiz quadrada. |
+| repetir | Cria um laço de repetição definido. |
+### Sistema Gráfico
+O motor gráfico utiliza um sistema de coordenadas para desenhar no terminal:
+```text
+    (0,0)  X+ --->
+    Y+  +---------------------------+
+    |   |                           |
+    |   |     MATRIZ GRÁFICA        |
+    v   |      (200 x 200)          |
+        |                           |
+        +---------------------------+
 
-### Texto e Interface
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `diga "texto"` | Exibe mensagem | `diga "Olá Mundo"` |
-| `pergunta "prompt" var` | Solicita entrada | `pergunta "Idade: " idade` |
-| `cor [0-9]` | Muda cor do texto | `cor 2` |
-| `limpar` | Limpa tela | `limpar` |
-| `espera N` | Pausa N segundos | `espera 2` |
-
-### Lógica e Controle
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `se condicao` | Estrutura condicional | `se idade >= 18` |
-| `senao` | Alternativa do se | `senao` |
-| `repetir N` | Loop N vezes | `repetir 5` |
-| `fim` | Fecha blocos | `fim` |
-
-### Matemática
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `calc var op` | Calcula (+, -, *, /) | `calc resultado a + b` |
-| `pot base exp` | Potência | `pot resultado 2 3` |
-| `raiz numero` | Raiz quadrada | `raiz resultado 16` |
-| `sorteia min max` | Número aleatório | `sorteia numero 1 100` |
-
-### Gráficos
-| Comando | Descrição | Exemplo |
-|---------|-----------|---------|
-| `ponto x y cor char` | Desenha ponto | `ponto 10 10 1 "█"` |
-| `linha x1 y1 x2 y2 cor char` | Desenha linha | `linha 0 0 20 20 2 "─"` |
-| `bloco x y larg alt cor char` | Desenha retângulo | `bloco 5 5 10 3 3 "■"` |
-
-## 🚀 Versão 5.0 - Melhorias
-
-- ✅ **Segurança**: Validação segura com `fgets()`
-- ✅ **Capacidade**: 10.000 variáveis (2x mais)
-- ✅ **Performance**: Arrays 200×200
-- ✅ **Estabilidade**: Tratamento melhorado de erros
-- ✅ **Organização**: Estrutura profissional de projeto
-- ✅ **Documentação**: Guias completos e detalhados
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Por favor:
-
-1. Fork este repositório
-2. Crie sua feature branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para o branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-### Diretrizes de Contribuição
-- Mantenha o código limpo e comentado
-- Siga o estilo de código existente
-- Adicione testes para novas funcionalidades
-- Atualize a documentação quando necessário
-
-## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](docs/LICENSE) para detalhes.
-
-## 🐛 Reportar Bugs
-
-Encontrou um bug? [Abra uma issue](https://github.com/mihqe/kitcode/issues) com:
-
-- Descrição detalhada do problema
-- Passos para reproduzir
-- Ambiente (SO, versão do KitCode)
-- Logs ou screenshots (se aplicável)
-
-## 💬 Discussões
-
-Dúvidas, sugestões ou ideias? [Participe das discussões](https://github.com/mihqe/kitcode/discussions)
-
-## 📞 Suporte
-
-- 📖 [Documentação Completa](docs/)
-- 💬 [GitHub Discussions](https://github.com/mihqe/kitcode/discussions)
-- 🐛 [Reportar Issues](https://github.com/mihqe/kitcode/issues)
-- 📧 [Contato via GitHub Issues](https://github.com/mihqe/kitcode/issues)
-
-## 🏆 Créditos
-
-- Desenvolvido com ❤️ no Brasil
-- Mantido pela comunidade open source
-- Contribuidores: [Veja no GitHub](https://github.com/mihqe/kitcode/graphs/contributors)
-
-## ⚖️ Avisos Importantes
-
-### 🛡️ Segurança e Responsabilidade
-- **Use por conta e risco**: Sem garantias de qualquer tipo
-- **Responsabilidade do usuário**: Pela segurança e uso adequado
-- **Revisão necessária**: Teste antes de usar em produção
-- [Política de Segurança Completa](docs/SECURITY.md)
-
-### ⚠️ Termos Legais
-- **Isenção de responsabilidade**: Não nos responsabilizamos por danos
-- **Uso de IA**: Parte do desenvolvimento assistida por IA (sem garantias de revisão)
-- **Direitos autorais**: Licenciado sob MIT com atribuição obrigatória
-- [Termos Legais Completos](docs/LEGAL.md)
-
-### 🚫 Usos Proibidos
-- Desenvolvimento de malware ou atividades ilegais
-- Ataques cibernéticos ou hacking não autorizado
-- Violação de privacidade ou fraude eletrônica
-
----
-
+```
+## Segurança e Implementação
+A versão 5.0 do KitCode foca na estabilidade do interpretador:
+ * **Entrada de Dados:** Utilização de fgets() para evitar vulnerabilidades de estouro de memória.
+ * **Capacidade de Variáveis:** O sistema foi dimensionado para suportar o endereçamento de até 10.000 variáveis simultâneas.
+ * **Compatibilidade:** O motor foi testado para operar de forma consistente em ambientes Windows, Linux e macOS.
+## Contribuição
+Para contribuir com o desenvolvimento:
+ 1. Realize o fork do repositório.
+ 2. Crie uma branch para sua alteração.
+ 3. Submeta um Pull Request descrevendo as mudanças técnicas aplicadas.
+## Licença
+Este projeto é licenciado sob a **Licença MIT**. Para mais detalhes, consulte o arquivo LICENSE.
 <div align="center">
-
-**[⬆️ Voltar ao Topo](#kitcode---linguagem-de-programação-brasileira)**
-
-Made with ❤️ in Brazil • Use com responsabilidade
-
+**KitCode - Linguagem de Programação Brasileira** Projeto em constante atualização.
 </div>
