@@ -1,3 +1,4 @@
+
 # KitCode - Linguagem de Programação Brasileira
 <div align="center">
 **Interpretador de comandos e motor gráfico baseado em C com sintaxe em português**
@@ -9,9 +10,9 @@ O KitCode é um projeto de linguagem de programação desenvolvido no Brasil que
 O projeto encontra-se em **fase de desenvolvimento ativo**. A arquitetura do sistema e a otimização dos componentes do motor v5.0 foram elaboradas com o auxílio de ferramentas de **Inteligência Artificial**, utilizadas especificamente para a estruturação de algoritmos complexos e organização da lógica de memória.
 ## Recursos Principais e Destaques
 <div align="center">
-### 
-### 
-### 
+### SISTEMA
+### PERFORMANCE
+### SUPORTE
 </div>
 ## Arquitetura do Sistema
 ```text
